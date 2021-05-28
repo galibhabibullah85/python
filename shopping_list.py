@@ -1,5 +1,6 @@
 shopping_list = []
 total_ammount = 0
+total_items = 0
 
 while 1:
 	item_name = input("Item name: ")
@@ -14,6 +15,7 @@ while 1:
 		
 		print("---------------------------------------------------------",end='\n')
 		print(f"Total ammount: {total_ammount}",end='\n')
+		print(f"Total items: {total_items}",end='\n')
 
 		break
 
