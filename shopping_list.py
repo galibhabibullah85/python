@@ -10,7 +10,7 @@ while 1:
 		print("---------------------------------------------------------",end='\n')
 
 		for x in range(0,len(shopping_list)):
-			print(f"{shopping_list[x][0]} => {shopping_list[x][1]}",end='\n')
+			print(f"{total_ammount}| {shopping_list[x][0]} => {shopping_list[x][1]}",end='\n')
 			total_ammount += int(shopping_list[x][1])
 		
 		print("---------------------------------------------------------",end='\n')
