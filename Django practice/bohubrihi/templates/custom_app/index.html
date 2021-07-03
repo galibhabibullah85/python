@@ -1,0 +1,67 @@
+<!DOCTYPE html><!--doctype needa to ne in everypage-->
+
+{% extends "base.html" %}<!--always need to write after doctype-->
+
+{% load static %}
+
+
+
+{% block title %}
+  Django learn with bohubrihi
+{% endblock %}
+
+
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'custom_app/css/style.css' %}" type="text/css" media="all" />
+{% endblock %}
+
+
+
+
+{% block body %}
+  {% comment %}
+  <a href="{% url 'login:index' %}">Log-in</a><br />
+  {% endcomment %}
+  <a href="{% url 'custom_app:blaa' %}">Dynamic-blaa</a><br />
+  <a href="{% url 'custom_app:list' %}">ListView</a><br />
+  <a href="/blaa/">Blaa</a><!--the first forward-slash means the main domain. for an example:domain.com,localhost:8000-->
+
+  <h1 align="center">hello bohubrihi django</h1>
+  
+  {{ veriable }}
+  {{ veriable|upper }}
+  {{ veriable|lower }}
+  {{ veriable|title }}
+  {{ int|add:"5" }}
+  
+  <!--
+  {{ veriable }} => this tag is used for printing any python veriables value in html
+  
+  {% if True %} => this tag is used for applying any condition,loop in html
+  {% endif %}
+  -->
+  
+  {% for row in db %}
+  <div style="border: 2px solid pink;">
+    <h1>{{ forcounter }}</h1>
+    <h1>{{ row.date }}</h1>
+  </div>
+  {% endfor %}
+  
+  <br /><br />
+  <hr />
+  <br /><br />
+  
+  <form action="" method="post" accept-charset="utf-8">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" name="submit" id="Submit" value="Ok" />
+  </form>
+  <!--
+   `as_` means "show the thing as"
+   `as_p` means "show the thing as paragraph html tag"
+   `as_table` means "show the thing as table html tag"
+   `as_ul` means "show the thing as ul html tag"
+  -->
+{% endblock %}

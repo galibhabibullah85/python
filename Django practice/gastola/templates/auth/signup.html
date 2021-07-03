@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+  <h1>Sign-up</h1>
+  {% for error in errors %}
+    <div>
+      <span>{{ error }}</span>
+    </div>
+  {% endfor %}
+  
+  <form action="" method="post" accept-charset="utf-8">
+    {% csrf_token %}
+    
+    {% comment %}
+      {{ usr_form.as_p }}
+      {{ usr_info_form.as_p }}
+    {% endcomment %}
+    
+  <label for="id_first_name">First name:</label>
+  <input type="text" name="first_name" maxlength="150" id="id_first_name" required><br />
+  
+  <label for="id_last_name">Last name:</label>
+  <input type="text" name="last_name" maxlength="150" id="id_last_name" required><br />
+  
+  <label for="id_email">Email address:</label>
+  <input type="email" name="email" maxlength="254" id="id_email" required><br />
+  
+  <label for="id_password">Password:</label>
+  <input type="password" name="password" required id="id_password"><br />
+  
+  <label for="id_phone">Phone:</label>
+  <input type="text" name="phone" maxlength="17" required id="id_phone"><br />
+  
+  <label for="id_home_address">Home address:</label>
+  <input type="text" name="home_address" maxlength="100" required id="id_home_address"><br />
+  
+  <label for="id_facebook_id">Facebook id:</label>
+  <input type="url" name="facebook_id" maxlength="100" required id="id_facebook_id"><br />
+  
+    <input type="submit" name="submit" id="submit" value="Submit"/>
+  </form>
+{% endblock %}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>{{ title }}</title>
+    {% block css %}{% endblock %}
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Landing-page</a></li>
+        <li><a href="{% url 'auth:login' %}">Log-in</a></li>
+        <li><a href="{% url 'auth:signup' %}">Sign-up</a></li>
+        <li><a href="{% url 'auth:logout' %}">Log-out</a></li>
+      </ul>
+    </nav>
+    {% block body %}{% endblock %}
+    {% block js %}{% endblock %}
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html><!--doctype needa to ne in everypage-->
+
+{% extends "base.html" %}<!--always need to write after doctype-->
+
+{% load static %}
+{% load filters %}
+
+
+
+{% block title %}
+  Django learn with bohubrihi
+{% endblock %}
+
+
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'custom_app/css/style.css' %}" type="text/css" media="all" />
+{% endblock %}
+
+
+
+
+{% block body %}
+  <a href="/">index</a>
+  <a href="{% url 'custom_app:index' %}">dynamic-index</a>
+  {{ bool|type_filter }}
+  {{ int|type_filter }}
+  {{ str|add_str_filter:". I love you" }}
+{% endblock %}

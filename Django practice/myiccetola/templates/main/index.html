@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  ICCETOLA.com
+{% endblock %}
+
+
+{% block body %}
+  <h1>landing-page</h1>
+  <a href="/auth/">/auth/</a><br />
+  <a href="/store/">/store/</a>
+  
+  {% comment "name or commenting_reason can be also given here" %}
+  <a href="{% url 'authenticate(this is defined in urls.app_name):signup(this thisis from urls.path.name)' get_veriable_name=value %}">/store/</a>-->
+  {% endcomment %}
+  
+  
+  
+  
+  {% if False %}
+    <h6>i am here</h6>
+  {% elif True %}
+    <h6>i am mere</h6>
+  {% else %}
+    <h6>i am there</h6>
+  {% endif %}
+{% endblock %}

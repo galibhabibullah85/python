@@ -1,0 +1,9 @@
+{% for a in list %}
+  <div style="border: 1px solid green;">
+    {{ forcounter }}
+    <a href="{% url 'custom_app:detail' pk=a.pk %}">
+    <!--pk=primary_key=id-->
+    {{ a }}
+    </a>
+  </div>
+{% endfor %}

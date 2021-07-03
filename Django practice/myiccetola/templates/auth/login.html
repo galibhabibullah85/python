@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  ICCETOLA.com | Log-in
+{% endblock %}
+
+
+{% block body %}
+  <h1>login</h1>
+  <a href="/">main landing-page</a><br />
+  <a href="/store/">/store/</a><br />
+  <a href="/auth/signup/">sign-up</a><br />
+  <a href="{% url 'authenticate:signup' %}">sign-up2</a><br />
+  
+  <form action="" method="post" accept-charset="utf-8">
+    {% csrf_token %}
+    {{ login_form.as_p }}
+    <input type="submit" name="submit" id="submit" value="Log-in" />
+  </form>
+{% endblock %}
