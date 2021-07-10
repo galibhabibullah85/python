@@ -1,3 +1,7 @@
+
+
+	
+
 shopping_list = []
 total_ammount = 0
 total_items = 0
@@ -20,6 +24,8 @@ while 1:
 		break
 
 	item_peice = input("Item price: ")
+	while item_peice=='':
+	  item_peice = input("Item price again: ")
 
 	shopping_list.append([item_name,item_peice])
 
